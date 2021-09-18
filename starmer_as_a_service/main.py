@@ -1,6 +1,6 @@
 from collections import defaultdict
 import random
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, redirect
 from flask_restful import Resource, Api, abort, reqparse
 from enum import Enum
 import csv
@@ -32,6 +32,10 @@ keiths_by_emotion = defaultdict(list)
 for keith in keiths:
     keiths_by_emotion[keith[1]].append(keith[0])
 
+class KeithPics(Resource):
+    def get(self, keith_file):
+        return send_from_directory(app.static_folder, keith_file, max_age=0)
+
 
 class Keith(Resource):
     def get(self):
@@ -43,12 +47,13 @@ class Keith(Resource):
 
         if keiths:
             keith = random.choice(keiths_by_emotion[args['emotion']])
-            return send_from_directory(app.static_folder, keith, max_age=0)
+            return redirect(api.url_for(KeithPics, keith_file=keith))
         else:
             abort(404, message=f"No Keiths found with emotion {args['emotion']}")
 
 
 api.add_resource(Keith, '/keith/')
+api.add_resource(KeithPics, '/keithpics/<keith_file>/')
 
 if __name__ == '__main__':
     app.run(debug=True)
