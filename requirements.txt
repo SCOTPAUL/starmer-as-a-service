@@ -13,6 +13,9 @@ flask-restful==0.3.9 \
 flask==2.0.1; python_version >= "3.6" \
     --hash=sha256:a6209ca15eb63fc9385f38e452704113d679511d9574d09b2cf9183ae7d20dc9 \
     --hash=sha256:1c4c257b1892aec1398784c63791cbaa43062f1f7aeb555c4da961b20ee68f55
+gunicorn==20.1.0; python_version >= "3.5" \
+    --hash=sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e \
+    --hash=sha256:e0a968b5ba15f8a328fdfd7ab1fcb5af4470c28aaf7e55df02a99bc13138e6e8
 itsdangerous==2.0.1; python_version >= "3.6" \
     --hash=sha256:5174094b9637652bdb841a3029700391451bd092ba3db90600dea710ba28e97c \
     --hash=sha256:9e724d68fc22902a1435351f84c3fb8623f303fffcc566a4cb952df8c572cff0
