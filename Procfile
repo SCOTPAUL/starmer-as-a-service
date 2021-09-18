@@ -1,1 +1,1 @@
-poetry run gunicorn main:app --chdir starmer_as_a_service/
+gunicorn main:app --chdir starmer_as_a_service/
