@@ -43,7 +43,7 @@ class Keith(Resource):
 
         if keiths:
             keith = random.choice(keiths_by_emotion[args['emotion']])
-            return send_from_directory(app.static_folder, keith, max_age=0, as_attachment=True)
+            return send_from_directory(app.static_folder, keith, max_age=0)
         else:
             abort(404, message=f"No Keiths found with emotion {args['emotion']}")
 
