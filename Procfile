@@ -1,1 +1,1 @@
-gunicorn main:app --chdir starmer_as_a_service/
+web: gunicorn main:app --chdir starmer_as_a_service/
