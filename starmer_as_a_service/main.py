@@ -56,4 +56,4 @@ api.add_resource(Keith, '/keith/')
 api.add_resource(KeithPics, '/keithpics/<keith_file>/')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
