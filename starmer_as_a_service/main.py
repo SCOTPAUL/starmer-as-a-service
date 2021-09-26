@@ -23,7 +23,8 @@ with open('../keiths/keiths.csv') as csv_file:
             print(f'Column names are {", ".join(row)}')
             line_count += 1
         else:
-            keiths.append((row[0], row[1], row[2]))
+            if float(row[2]) > 0.4:
+                keiths.append((row[0], row[1], row[2]))
             line_count += 1
 
 
