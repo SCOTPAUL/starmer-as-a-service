@@ -15,4 +15,4 @@ COPY starmer_as_a_service /app/starmer_as_a_service
 
 EXPOSE 8000
 
-CMD ["poetry", "run", "gunicorn", "main:app", "--chdir", "starmer_as_a_service/"]
+CMD ["poetry", "run", "gunicorn", "-b", "0.0.0.0:8000", "main:app", "--chdir", "starmer_as_a_service/"]
