@@ -13,4 +13,6 @@ RUN poetry install --no-interaction
 COPY keiths /app/keiths
 COPY starmer_as_a_service /app/starmer_as_a_service
 
+EXPOSE 8080
+
 CMD ["poetry", "run", "gunicorn", "main:app", "--chdir", "starmer_as_a_service/"]
